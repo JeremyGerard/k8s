@@ -1,0 +1,14 @@
+# create a service for wordpress
+apiVersion: v1
+kind: Service
+metadata:
+  name: drupal-service
+  labels:
+    app: drupal
+spec:
+  ports:
+    - port: 80
+      nodePort: 30095
+  selector:
+    app: drupal
+  type: NodePort
